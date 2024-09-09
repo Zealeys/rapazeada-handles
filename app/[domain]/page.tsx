@@ -110,7 +110,7 @@ export default async function IndexPage({
     <main className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-4">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
-          Utilize o seu próprio domínio {domain} <br className="hidden sm:inline" />
+          Utilize o seu domínio {domain} <br className="hidden sm:inline" />
           no seu nome de Usuário do Bluesky!
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
@@ -167,7 +167,7 @@ export default async function IndexPage({
                 <Button type="submit">Enviar</Button>
               </div>
               <p className="text-sm text-muted-foreground">
-                Insira o nome de Usuário que você quer ter com o domínio {domain}, sem incluir o @
+                Insira o nome que você quer ter com o domínio {domain}, sem incluir o @
               </p>
               {error2 && (
                 <p className="text-sm text-red-500">
@@ -190,7 +190,7 @@ export default async function IndexPage({
           </form>
         </Stage>
         <Stage
-          title="Agora altere o seu nome de Usuário dentro do aplicativo/site do Bluesky!"
+          title="Agora altere o seu Usuário dentro do aplicativo/site do Bluesky!"
           number={3}
           disabled={!newHandle || !!error2}
           last
