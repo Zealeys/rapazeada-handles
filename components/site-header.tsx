@@ -20,20 +20,7 @@ export function SiteHeader({ children }: Props) {
   const [showMenu, setShowMenu] = useState(false)
 
   const links = (
-    <nav className="flex items-center gap-4 md:gap-1">
-      
-        <div
-          className={buttonVariants({
-            size: "sm",
-            variant: "ghost",
-          })}
-        >
-          
-          <span className="sr-only"></span>
-        </div>
-      </Link>
-      <ThemeToggle />
-    </nav>
+    
   )
 
   const MenuIcon = showMenu ? X : Menu
