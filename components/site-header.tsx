@@ -21,7 +21,17 @@ export function SiteHeader({ children }: Props) {
 
   const links = (
     <nav className="flex items-center gap-4 md:gap-1">
-      
+      <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
+        <div
+          className={buttonVariants({
+            size: "sm",
+            variant: "ghost",
+          })}
+        >
+          <Icons.gitHub className="size-5" />
+          <span className="sr-only"></span>
+        </div>
+      </Link>
       <ThemeToggle />
     </nav>
   )
@@ -43,7 +53,7 @@ export function SiteHeader({ children }: Props) {
               />
             </div>
             <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">
-              
+              {links}
             </div>
           </div>
         </div>
@@ -75,7 +85,7 @@ export function SiteHeader({ children }: Props) {
                 )
             )}
           </nav>
-          
+          {links}
         </div>
       </div>
       {/* Backdrop */}
