@@ -110,15 +110,15 @@ export default async function IndexPage({
     <main className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-4">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
-          Get your own {domain} <br className="hidden sm:inline" />
-          handle for Bluesky
+          Utilize o seu próprio domínio {domain} <br className="hidden sm:inline" />
+          no seu nome de Usuário do Bluesky!
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
-          Follow the instructions below to get your own {domain} handle
+          Siga as instruções abaixo para adquirir o seu nome de Usuário com o domínio {domain}!
         </p>
       </div>
       <div>
-        <Stage title="Enter your current handle" number={1}>
+        <Stage title="Insira o seu nome de Usuário do Bluesky atual!" number={1}>
           <form>
             <div className="grid w-full max-w-sm items-center gap-1.5">
               <div className="flex w-full max-w-sm items-center space-x-2">
@@ -128,24 +128,24 @@ export default async function IndexPage({
                 <Input
                   type="text"
                   name="handle"
-                  placeholder="example.bsky.social"
+                  placeholder="exemplo.bsky.social"
                   defaultValue={handle}
                   required
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Enviar</Button>
               </div>
               <p className="text-sm text-muted-foreground">
-                Enter your current handle, not including the @
+                Insira o seu nome de Usuário atual, sem incluir o @
               </p>
               {error1 && (
                 <p className="flex flex-row items-center gap-2 text-sm text-red-500">
-                  <X className="size-4" /> Handle not found - please try again
+                  <X className="size-4" /> Usuário não encontrado - Por favor tente novamente
                 </p>
               )}
               {profile && (
                 <>
                   <p className="text-muted-forground mt-4 flex flex-row items-center gap-2 text-sm">
-                    <Check className="size-4 text-green-500" /> Account found
+                    <Check className="size-4 text-green-500" /> Usuário encontrado!
                   </p>
                   <Profile profile={profile} className="mt-4" />
                 </>
@@ -153,7 +153,7 @@ export default async function IndexPage({
             </div>
           </form>
         </Stage>
-        <Stage title="Choose your new handle" number={2} disabled={!profile}>
+        <Stage title="Escolha o seu novo nome de Usuário!" number={2} disabled={!profile}>
           <form>
             <input type="hidden" name="handle" value={handle} />
             <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -161,28 +161,27 @@ export default async function IndexPage({
                 <Input
                   type="text"
                   name="new-handle"
-                  placeholder={`example.${domain}`}
+                  placeholder={`exemplo.${domain}`}
                   defaultValue={newHandle}
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Enviar</Button>
               </div>
               <p className="text-sm text-muted-foreground">
-                Enter the {domain} handle that you would like to have, not
-                including the @
+                Insira o nome de Usuário que você quer ter com o domínio {domain}, sem incluir o @
               </p>
               {error2 && (
                 <p className="text-sm text-red-500">
                   {(() => {
                     switch (error2) {
-                      case "handle taken":
-                        return "Handle already taken - please enter a different handle"
-                      case "invalid handle":
+                      case "Nome de Usuário já utilizado!":
+                        return "Nome de Usuário já utilizado! - Por favor insira outro nome!"
+                      case "Nome de Usuário inválido!":
                       case "slur":
-                        return "Invalid handle - please enter a different handle"
+                        return "Nome de Usuário inválido! - Por favor insira outro nome!"
                       case "reserved":
-                        return "Reserved handle - please enter a different handle"
+                        return "Nome de Usuário reservado para outra pessoa! - Por favor insira outro nome!"
                       default:
-                        return "An error occured - please try again"
+                        return "Um erro aconteceu! - Por favor tente novamente mais tarde!"
                     }
                   })()}
                 </p>
@@ -191,23 +190,22 @@ export default async function IndexPage({
           </form>
         </Stage>
         <Stage
-          title="Change your handle within the Bluesky app"
+          title="Agora altere o seu nome de Usuário dentro do aplicativo/site do Bluesky!"
           number={3}
           disabled={!newHandle || !!error2}
           last
         >
           <p className="max-w-lg text-sm">
-            Go to Settings {">"} Advanced {">"} Change my handle. Select &quot;I
-            have my own domain&quot; and enter{" "}
-            {newHandle ? `"${newHandle}"` : "your new handle"}. Finally, tap
-            &quot;Verify DNS Record&quot;.
+            Vá para Configurações {">"} Avançado {">"} Alterar Usuário. Selecione &quot;Eu tenho meu próprio domínio&quot; e insira{" "}
+            {newHandle ? `"${newHandle}"` : "o seu novo nome de Usuário"}. Por fim, pressione
+            &quot;Verificar registro DNS&quot;.
           </p>
           <p className="mt-6 max-w-lg text-sm">
-            If you like this project, consider{" "}
+            {" "}
             <a href="https://github.com/sponsors/mozzius" className="underline">
-              sponsoring my work
+              
             </a>
-            .
+            
           </p>
         </Stage>
       </div>
