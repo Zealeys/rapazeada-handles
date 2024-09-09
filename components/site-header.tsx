@@ -68,7 +68,7 @@ export function SiteHeader({ children }: Props) {
                 )
             )}
           </nav>
-          {links}
+          
         </div>
       </div>
       {/* Backdrop */}
