@@ -19,22 +19,7 @@ interface Props {
 export function SiteHeader({ children }: Props) {
   const [showMenu, setShowMenu] = useState(false)
 
-  const links = (
-    <nav className="flex items-center gap-4 md:gap-1">
-      <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-        <div
-          className={buttonVariants({
-            size: "sm",
-            variant: "ghost",
-          })}
-        >
-          <Icons.gitHub className="size-5" />
-          <span className="sr-only">GitHub</span>
-        </div>
-      </Link>
-      <ThemeToggle />
-    </nav>
-  )
+  
 
   const MenuIcon = showMenu ? X : Menu
 
