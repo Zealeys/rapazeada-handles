@@ -15,4 +15,7 @@ export const siteConfig = {
       href: "/create-your-own",
     },
   ],
+  links: {
+    github: "",
+  },
 }
