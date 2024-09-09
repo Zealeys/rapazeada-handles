@@ -37,9 +37,7 @@ export function SiteHeader({ children }: Props) {
                 onClick={() => setShowMenu((m) => !m)}
               />
             </div>
-            <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">
-              {links}
-            </div>
+            
           </div>
         </div>
       </header>
