@@ -19,9 +19,7 @@ interface Props {
 export function SiteHeader({ children }: Props) {
   const [showMenu, setShowMenu] = useState(false)
 
-  const links = (
-    
-  )
+
 
   const MenuIcon = showMenu ? X : Menu
 
