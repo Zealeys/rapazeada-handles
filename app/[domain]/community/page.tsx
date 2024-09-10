@@ -36,12 +36,11 @@ export default async function CommunityPage({ params }: Props) {
     <main className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-4">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
-          The {domain} <br className="hidden sm:inline" />
-          community
+          Veja todos os membros atualmente utilizando o domínio {domain} (Comunidade do Cellbit!) <br className="hidden sm:inline" />
+          
         </h1>
         <p className="max-w-[500px] text-lg text-muted-foreground sm:text-xl">
-          Want to join the {count} members of the {domain} community? Get your
-          own{" "}
+          Quer aparecer aqui? Temos {count} membros utilizando o domínio {domain}, participe também! {" "}
           <Link href="/" className="underline">
             {domain} handle
           </Link>
