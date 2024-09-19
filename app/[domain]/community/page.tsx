@@ -42,7 +42,7 @@ export default async function CommunityPage({ params }: Props) {
         <p className="max-w-[500px] text-lg text-muted-foreground sm:text-xl">
           Quer aparecer aqui? Temos {count} membros utilizando o domínio {domain}, participe também! {" "}
           <Link href="/" className="underline">
-            {domain} handle
+            {domain} 
           </Link>
           .
         </p>
